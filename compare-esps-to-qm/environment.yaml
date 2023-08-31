@@ -1,0 +1,16 @@
+name: compare-esps
+channels:
+  - conda-forge/label/libint_dev
+  - conda-forge
+  - defaults
+dependencies:
+  - python >=3.8
+  - pint ==0.20.1
+  - pydantic <2
+  - click
+
+  - openff-recharge
+  - openff-toolkit >=0.11.0
+  - openff-units
+
+  - psi4
