@@ -1,0 +1,22 @@
+molecule mol {
+    0 1
+    C   -0.35075348  -0.00507298  -0.01802813
+    O    0.96437042  -0.36240239  -0.26012000
+    H   -0.59845665   0.06164932   1.05237343
+    H   -0.98625455  -0.81567528  -0.46260344
+    H   -0.65785687   0.92689831  -0.50107706
+    H    1.62895112   0.19460302   0.18945519
+    units angstrom
+    no_com
+    no_reorient
+}
+
+set {
+  basis 6-31g*
+  dft_spherical_points 434
+  dft_radial_points 85
+  dft_pruning_scheme robust
+}
+
+Ewfn = prop('hf', properties = ['GRID_ESP', 'GRID_FIELD'], return_wfn=True)
+mol.save_xyz_file('final-geometry.xyz', 1)
